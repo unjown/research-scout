@@ -7,7 +7,7 @@ import feedparser
 from dotenv import load_dotenv
 from cloud.collectors.opportunities import QUERIES as OPPORTUNITY_QUERIES
 from cloud.collectors.patents import QUERIES as PATENT_QUERIES
-from cloud.collectors.news import FEEDS
+from cloud.collectors.news import FEEDS, allow_news
 from cloud.filters import normalize
 from cloud.database import save_findings
 from cloud.discord import send_status
@@ -38,7 +38,7 @@ def rss_news():
             feed = feedparser.parse(requests.get(url, timeout=30).content)
             for entry in feed.entries[:10]:
                 record = normalize(entry.get('title'), entry.get('link'), entry.get('summary'), 'news', source)
-                if record:
+                if record and allow_news(record['title'], record['summary'], source):
                     out.append(record)
         except Exception as exc:
             logging.warning('RSS %s failed: %s', source, exc)
