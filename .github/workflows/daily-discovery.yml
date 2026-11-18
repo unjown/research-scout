@@ -2,7 +2,7 @@ name: Daily Research Discovery
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *' # 08:00 Asia/Manila (UTC+8)
+    - cron: '7 0 * * *' # 08:00 Asia/Manila (UTC+8)
 permissions:
   contents: read
 concurrency:
