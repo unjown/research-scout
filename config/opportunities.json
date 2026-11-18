@@ -1,0 +1,21 @@
+{
+  "category": "opportunities",
+  "destinations": [
+    "opportunities",
+    "archive"
+  ],
+  "instructions": [
+    "Include hackathons, case competitions, startup pitches, innovation challenges, ideathons and technology contests.",
+    "Global events and unknown eligibility are eligible for consideration.",
+    "Exclude only when explicit evidence establishes a foreign-school-only restriction or another hard ineligibility.",
+    "Distinguish a listing directory, historical announcement and active registration page.",
+    "Missing deadline or eligibility means needs verification when otherwise relevant, not automatic rejection.",
+    "Do not rate a directory of opportunities as if it were a single open competition. Directories may be useful references but are not actionable events.",
+    "An event explicitly finished or with a passed deadline is not an active opportunity, even if historically interesting.",
+    "Unknown eligibility is NOT evidence of restriction. An explicit foreign-school-only restriction is a hard exclusion.",
+    "Use 9-10 for exceptional actionable opportunities, 7-8 clear active matches, 4-6 uncertain or indirect listings, 0-3 closed or unrelated."
+  ],
+  "minimum_publish_relevance": 7,
+  "excluded_title_patterns": [],
+  "protected_title_patterns": []
+}

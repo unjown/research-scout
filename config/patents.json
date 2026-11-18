@@ -1,0 +1,27 @@
+{
+  "category": "patents",
+  "destinations": [
+    "patents-main",
+    "patents-explore",
+    "archive"
+  ],
+  "instructions": [
+    "Evaluate the specific technical mechanism and whether a student or small team could prototype it using obtainable components.",
+    "Prioritize IoT, sensing, robotics, computer vision, edge AI, communications, embedded systems and useful software.",
+    "Generic mentions of AI, IoT or robotics alone are not sufficient for a high relevance score.",
+    "Adjacent or uncertain but potentially interesting inventions belong in patents-explore.",
+    "Do not infer grant, expiry, novelty or publication date from the day the search found the patent.",
+    "High relevance requires a specific technical mechanism, not merely mentions of familiar technologies.",
+    "Distinguish patent document content from cited-by lists, related patents, generic background and unrelated table rows.",
+    "Use patents-explore for adjacent or plausible but incompletely evidenced inventions; never claim legal status without verified metadata.",
+    "9-10 requires unusually strong fit and a concrete, accessible implementation; 7-8 strong fit; 4-6 exploratory; 0-3 unrelated."
+  ],
+  "minimum_main_relevance": 7,
+  "minimum_explore_relevance": 4,
+  "excluded_title_patterns": [
+    "\\b(?:gene therapy|genetic engineering|crispr|drug formulation|cancer therapy)\\b"
+  ],
+  "protected_title_patterns": [
+    "\\b(?:sensor|embedded|microcontroller|robot|computer vision|imaging)\\b"
+  ]
+}

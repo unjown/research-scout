@@ -1,21 +1,22 @@
-"""Conservative patent relevance guard; no API keys or network requests."""
-import re
+"""Conservative patent guard; only trusted local policy controls routing."""
+from local.policy import load_policy, matches
 
-EXCLUDE = re.compile(r'\b(?:gene editing|genetic engineering|gene therapy|genome|crispr|dna sequencing|rna sequencing|pharmaceutical|drug formulation|protein engineering|cancer therapy|surgical implant|clinical treatment)\b', re.I)
-GENERAL = re.compile(r'\b(?:humanoid robot|computer vision systems?|iot sensors?|artificial intelligence systems?|machine learning systems?)\b', re.I)
-SPECIFIC = re.compile(r'\b(?:low.cost|embedded|microcontroller|edge computing|on.device|open.source|camera calibration|lidar|mmwave|radar|sensor fusion|wireless sensing|computer vision|robot navigation|assistive|energy harvesting|fault detection|object detection|image processing)\b', re.I)
 
-def patent_guard(item, result, page_text=""):
-    """Modify AI classification only for clear evidence; uncertainty goes to Explore."""
+def patent_guard(item, result, page_text=''):
     if item.get('category') != 'patents':
         return result
-    text = ' '.join(str(item.get(k) or '') for k in ('title', 'summary')) + ' ' + page_text[:5000]
-    if EXCLUDE.search(text) and not SPECIFIC.search(text):
-        result.update(destination='archive', score=min(result['score'], 2),
-                      reason='Specialized biological/medical invention outside accessible prototyping scope.',
-                      needs_verification=True)
-    elif result['destination'] == 'patents-main' and (not page_text.strip() or (GENERAL.search(item.get('title', '')) and not SPECIFIC.search(text))):
-        result.update(destination='patents-explore', score=min(result['score'], 6),
-                      reason='Patent specificity or accessible implementation not yet established.',
-                      needs_verification=True)
-    return result
+    _, policy = load_policy('patents')
+    out = dict(result)
+    title = str(item.get('title') or '')[:300]
+    if matches(policy.get('excluded_title_patterns', []), title) and not matches(policy.get('protected_title_patterns', []), title):
+        out.update(score=min(out['score'], 3), destination='archive',
+                   needs_verification=False, reason='Excluded specialized biological/pharmaceutical patent.')
+        return out
+    if out['score'] < policy['minimum_explore_relevance']:
+        out.update(destination='archive', needs_verification=False)
+    elif out['destination'] == 'patents-main':
+        if out['score'] < policy['minimum_main_relevance'] or not (page_text or '').strip():
+            out.update(destination='patents-explore',
+                       needs_verification=not bool((page_text or '').strip()),
+                       reason='Exploratory patent: technical evidence is incomplete or relevance is moderate.')
+    return out

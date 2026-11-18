@@ -1,0 +1,25 @@
+{
+  "category": "news",
+  "destinations": [
+    "daily-news",
+    "archive"
+  ],
+  "instructions": [
+    "You are a short newspaper editor. Score fit with preferred coverage, not generic newsworthiness.",
+    "Preferred: AI, cybersecurity, software, hardware, computing infrastructure, robotics, engineering, Philippine politics, government, economy, major Philippine headlines, and consequential world affairs.",
+    "Ordinary biology, medicine, astronomy, entertainment, celebrity and curiosity science are outside the daily digest unless they are an exceptional major public event or a concrete technology breakthrough.",
+    "Examples of low relevance: ancient virus and brain evolution, deep-sea animal discoveries, James Bond casting. Importance may still be high.",
+    "Examples of high relevance: Microsoft 365 outage, major Philippine economic policy, ASEAN summit in Manila, AI chip restrictions, cyberattacks.",
+    "0-3 off-topic; 4-6 adjacent or minor; 7-8 clearly relevant; 9-10 exceptionally relevant and consequential. Do not use 9 routinely.",
+    "Missing publication timestamp is not proof of falsehood; evaluate the story using available evidence. Do not misidentify US events as Philippine events.",
+    "Allowed destinations: daily-news or archive."
+  ],
+  "minimum_publish_relevance": 7,
+  "excluded_title_patterns": [
+    "\\b(?:ancient virus|brain evolution|alzheimer(?:\\x27s)?|vitamin c|cancer-linked chemicals|microbiome|genetic (?:variation|study)|james bond|celebrity casting|dead star|uranus and neptune|deep-sea rock|animals living inside)\\b"
+  ],
+  "protected_title_patterns": [
+    "\\b(?:pandemic|outbreak|public health emergency|major earthquake|typhoon)\\b",
+    "\\b(?:vaccine|medical device|diagnostic) (?:technology|approval|breakthrough)\\b"
+  ]
+}

@@ -9,6 +9,8 @@ from datetime import datetime, timezone
 import requests
 from supabase import create_client
 from local.classifier import classify
+from local.patent_filter import patent_guard
+from local.news_filter import news_guard
 from local.fetcher import fetch_excerpt
 
 log = logging.getLogger('research_scout.worker')
@@ -151,10 +153,16 @@ def process_item(db, run_id, item, threshold):
             more = fetch_excerpt(item['url'])
             if more:
                 result = classify(item, more)
+        result = patent_guard(item, result, excerpt)
+        result = news_guard(item, result)
         score = result['score']
         destination = result['destination']
         review = bool(result.get('needs_verification', True))
-        if destination == 'archive' or score < threshold:
+        if destination == 'archive' or score <= 3:
+            outcome = 'rejected'
+        elif item['category'] == 'patents' and destination == 'patents-explore' and score >= 4:
+            outcome = 'needs_review' if review else 'publish_candidate'
+        elif score < threshold:
             outcome = 'rejected'
         elif review:
             outcome = 'needs_review'
