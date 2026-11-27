@@ -1,0 +1,76 @@
+{
+  "id": "developer",
+  "display_name": "Developer",
+  "description": "Technical research and development",
+  "interests": [
+    "AI and machine learning",
+    "Local language models",
+    "Edge AI",
+    "Software engineering",
+    "Cybersecurity",
+    "Robotics",
+    "Embedded systems",
+    "IoT",
+    "Computer vision",
+    "Open-source tools",
+    "Developer infrastructure",
+    "Important technology developments",
+    "Philippine public affairs, economy, policy, and consequential national headlines",
+    "International developments with meaningful policy, economic, security, or technology impact",
+    "Interdisciplinary science with a concrete computing, AI, engineering, or research-method contribution",
+    "Embedded electronics",
+    "Sensors",
+    "IoT",
+    "Robotics",
+    "Autonomous systems",
+    "Computer vision",
+    "Edge AI",
+    "Communications",
+    "Low-cost engineering",
+    "Practical technical inventions",
+    "Hackathons",
+    "CTF competitions",
+    "Programming competitions",
+    "Startup competitions",
+    "Engineering challenges",
+    "Innovation grants",
+    "Technology competitions",
+    "Relevant research opportunities"
+  ],
+  "category_instructions": {
+    "news": [
+      "Prioritize AI, machine learning, local models, edge AI, software, cybersecurity, robotics, embedded systems, IoT, computer vision, open-source tools, developer infrastructure, and important technology developments.",
+      "Preserve Philippine and international public-affairs preferences; include interdisciplinary research when a concrete technical connection is demonstrated."
+    ],
+    "patents": [
+      "Prioritize embedded electronics, sensors, IoT, robotics, autonomous systems, computer vision, edge AI, communications, low-cost engineering, and practical technical inventions."
+    ],
+    "opportunities": [
+      "Prioritize hackathons, CTFs, programming competitions, startup competitions, engineering challenges, innovation grants, technology competitions, and relevant research opportunities."
+    ]
+  },
+  "response_preferences": {
+    "detail_level": "technical",
+    "focus": [
+      "Technical mechanisms",
+      "Implementation feasibility",
+      "Tools and frameworks",
+      "Hardware requirements",
+      "Open-source alternatives",
+      "Source references",
+      "Technical limitations",
+      "Practical applications"
+    ],
+    "preferred_sections": [
+      "Summary",
+      "Technical mechanism",
+      "Implementation",
+      "Limitations",
+      "Sources"
+    ]
+  },
+  "filter_preferences": {
+    "minimum_relevance": 2,
+    "exclude_clearly_unrelated": true
+  }
+}

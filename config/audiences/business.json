@@ -1,0 +1,72 @@
+{
+  "id": "business",
+  "display_name": "Business",
+  "description": "Markets, commercial applications, and entrepreneurship",
+  "interests": [
+    "Startups",
+    "Entrepreneurship",
+    "Business models",
+    "Industry trends",
+    "Market opportunities",
+    "Funding",
+    "Venture capital",
+    "Acquisitions",
+    "Business regulations",
+    "Philippine business developments",
+    "International economic developments",
+    "Commercial applications of AI",
+    "Business productivity technology",
+    "Commercializable inventions",
+    "Licensing opportunities",
+    "Technology differentiation",
+    "Manufacturing feasibility",
+    "Potential market applications",
+    "Intellectual property strategy",
+    "Practical inventions with business value",
+    "Startup pitch competitions",
+    "Business plan competitions",
+    "Grants",
+    "Accelerators",
+    "Incubators",
+    "Entrepreneurship programs",
+    "Innovation challenges",
+    "Funding opportunities"
+  ],
+  "category_instructions": {
+    "news": [
+      "Prioritize startups, entrepreneurship, business models, industry trends, market opportunities, funding, venture capital, acquisitions, business regulations, Philippine business, international economics, commercial AI, and productivity technology."
+    ],
+    "patents": [
+      "Prioritize commercializable inventions, licensing, technology differentiation, manufacturing feasibility, market applications, intellectual property strategy, and practical inventions with business value."
+    ],
+    "opportunities": [
+      "Prioritize startup pitch and business plan competitions, grants, accelerators, incubators, entrepreneurship programs, innovation challenges, and funding opportunities."
+    ]
+  },
+  "response_preferences": {
+    "detail_level": "decision-focused",
+    "focus": [
+      "Business implications",
+      "Target customers",
+      "Market opportunity",
+      "Competitive landscape",
+      "Monetization",
+      "Costs",
+      "Risks",
+      "Commercial feasibility",
+      "Regulatory considerations",
+      "Actionable next steps"
+    ],
+    "preferred_sections": [
+      "Business implications",
+      "Customers and market",
+      "Costs and risks",
+      "Feasibility",
+      "Next steps"
+    ]
+  },
+  "filter_preferences": {
+    "minimum_relevance": 2,
+    "exclude_clearly_unrelated": true
+  }
+}

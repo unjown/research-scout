@@ -1,25 +1,22 @@
 {
+  "version": 2,
   "category": "news",
-  "destinations": [
-    "daily-news",
-    "archive"
+  "destinations": ["daily-news", "archive"],
+  "interest_profile": [
+    "Artificial intelligence and machine learning methods, models, infrastructure, safety, and applications with a demonstrated technical connection.",
+    "Cybersecurity vulnerabilities, attacks, defenses, privacy, and significant service outages.",
+    "Software engineering, developer tools, computing platforms, open-source systems, and computing infrastructure.",
+    "Hardware, semiconductors, electronics, robotics, autonomous systems, embedded systems, sensors, and engineering.",
+    "Major Philippine politics, government, economy, public policy, and consequential national headlines.",
+    "Consequential world affairs with meaningful policy, economic, security, or technology impact.",
+    "Interdisciplinary science only when a concrete reusable computing, AI, engineering, or research-method contribution is demonstrated."
   ],
   "instructions": [
-    "You are a short newspaper editor. Score fit with preferred coverage, not generic newsworthiness.",
-    "Preferred: AI, cybersecurity, software, hardware, computing infrastructure, robotics, engineering, Philippine politics, government, economy, major Philippine headlines, and consequential world affairs.",
-    "Ordinary biology, medicine, astronomy, entertainment, celebrity and curiosity science are outside the daily digest unless they are an exceptional major public event or a concrete technology breakthrough.",
-    "Examples of low relevance: ancient virus and brain evolution, deep-sea animal discoveries, James Bond casting. Importance may still be high.",
-    "Examples of high relevance: Microsoft 365 outage, major Philippine economic policy, ASEAN summit in Manila, AI chip restrictions, cyberattacks.",
-    "0-3 off-topic; 4-6 adjacent or minor; 7-8 clearly relevant; 9-10 exceptionally relevant and consequential. Do not use 9 routinely.",
-    "Missing publication timestamp is not proof of falsehood; evaluate the story using available evidence. Do not misidentify US events as Philippine events.",
-    "Allowed destinations: daily-news or archive."
-  ],
-  "minimum_publish_relevance": 7,
-  "excluded_title_patterns": [
-    "\\b(?:ancient virus|brain evolution|alzheimer(?:\\x27s)?|vitamin c|cancer-linked chemicals|microbiome|genetic (?:variation|study)|james bond|celebrity casting|dead star|uranus and neptune|deep-sea rock|animals living inside)\\b"
-  ],
-  "protected_title_patterns": [
-    "\\b(?:pandemic|outbreak|public health emergency|major earthquake|typhoon)\\b",
-    "\\b(?:vaccine|medical device|diagnostic) (?:technology|approval|breakthrough)\\b"
+    "Assess actual content contextually; never exclude using a title topic blacklist.",
+    "Research interests include AI, cybersecurity, software, hardware, infrastructure, robotics, engineering, Philippine public affairs, and consequential world affairs.",
+    "Biology, medicine, astronomy, and other fields may be relevant when they contain a concrete AI, computing, engineering, policy, or research-method connection.",
+    "Missing publication dates and unverified claims require labels but do not by themselves prevent publication.",
+    "General importance must not increase the relevance score.",
+    "Exclude relevance 0 through 1; publish relevance 2 through 10 with uncertainty labels where appropriate."
   ]
 }

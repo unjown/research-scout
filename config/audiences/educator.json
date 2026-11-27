@@ -1,0 +1,69 @@
+{
+  "id": "educator",
+  "display_name": "Educator",
+  "description": "Teaching, learning, and education technology",
+  "interests": [
+    "Education technology",
+    "AI in education",
+    "Teaching tools",
+    "Learning research",
+    "Curriculum developments",
+    "Digital literacy",
+    "Educational accessibility",
+    "Student innovation",
+    "Philippine education developments",
+    "Open educational resources",
+    "Educational devices",
+    "Learning technologies",
+    "Assistive learning tools",
+    "Classroom technology",
+    "STEM education systems",
+    "Low-cost teaching equipment",
+    "Educational software and hardware",
+    "Student competitions",
+    "Academic hackathons",
+    "Research grants",
+    "Scholarships",
+    "Teaching innovation challenges",
+    "STEM competitions",
+    "Education conferences",
+    "Faculty development programs",
+    "Student research opportunities"
+  ],
+  "category_instructions": {
+    "news": [
+      "Prioritize education technology, AI in education, teaching tools, learning research, curriculum, digital literacy, accessibility, student innovation, Philippine education, and open educational resources."
+    ],
+    "patents": [
+      "Prioritize educational devices, learning technologies, assistive learning tools, classroom technology, STEM systems, low-cost teaching equipment, and educational software or hardware."
+    ],
+    "opportunities": [
+      "Prioritize student competitions, academic hackathons, research grants, scholarships, teaching innovation challenges, STEM competitions, education conferences, faculty development, and student research opportunities."
+    ]
+  },
+  "response_preferences": {
+    "detail_level": "practical",
+    "focus": [
+      "Educational applications",
+      "Classroom relevance",
+      "Learning outcomes",
+      "Accessibility",
+      "Cost",
+      "Student eligibility",
+      "Required resources",
+      "Age or academic-level suitability",
+      "Practical teaching applications"
+    ],
+    "preferred_sections": [
+      "Educational use",
+      "Classroom relevance",
+      "Resources and cost",
+      "Eligibility",
+      "Teaching applications"
+    ]
+  },
+  "filter_preferences": {
+    "minimum_relevance": 2,
+    "exclude_clearly_unrelated": true
+  }
+}

@@ -58,7 +58,7 @@ def main():
     logging.info('Discovered %s unique candidates', len(deduped))
     count = save_findings(list(deduped.values()))
     # This is a candidate count, not the count of newly inserted rows.
-    send_status(f'Research Scout discovery finished. {count} unique candidates submitted to database. Local AI remains off. Eligibility and patent status are not yet verified.')
+    send_status(f'RS.ai discovery finished. {count} unique candidates submitted to database. Local AI remains off. Eligibility and patent status are not yet verified.')
 
 
 if __name__ == '__main__':
@@ -67,7 +67,7 @@ if __name__ == '__main__':
     except Exception as exc:
         logging.exception('Discovery failed')
         try:
-            send_status('Research Scout discovery FAILED; inspect GitHub Actions logs.')
+            send_status('RS.ai discovery FAILED; inspect GitHub Actions logs.')
         except Exception:
             pass
         sys.exit(1)
